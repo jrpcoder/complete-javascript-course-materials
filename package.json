@@ -1,0 +1,19 @@
+{
+  "name": "complete-javascript-course-materials",
+  "version": "1.0.0",
+  "description": "javascript course materials and exercises. Course developed by @jonasschmedtmann",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrpcoder/complete-javascript-course-materials.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrpcoder/complete-javascript-course-materials/issues"
+  },
+  "homepage": "https://github.com/jrpcoder/complete-javascript-course-materials#readme"
+}

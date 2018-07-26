@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/jrpcoder/complete-javascript-course-materials/issues"
   },
-  "homepage": "https://github.com/jrpcoder/complete-javascript-course-materials#readme"
+  "homepage": "https://github.com/jrpcoder/complete-javascript-course-materials#readme",
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  }
 }

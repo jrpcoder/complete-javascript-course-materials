@@ -64,7 +64,6 @@ elements.searchResultsPages.addEventListener('click', e => {
 const controlRecipe = async () => {
     // get ID from url
     const id = window.location.hash.replace('#', '');
-    console.log(id);
 
     if (id) {
         // prepare UI for changes
@@ -81,7 +80,7 @@ const controlRecipe = async () => {
             // get recipe data and parse the ingredients
             await state.recipe.getRecipe();
             state.recipe.parseIngredients();
-            console.log(state.recipe);
+            
             // calculate servings and time
             state.recipe.calcServings();
             state.recipe.calcTime();
@@ -133,10 +132,6 @@ elements.shopping.addEventListener('click', e => {
 
 //LIKES CONTROLLER
 
-//TESTING
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikes());
-
 const controlLike = () => {
     if(!state.likes) state.likes = new Likes();
     const currentID = state.recipe.id;
@@ -166,6 +161,22 @@ const controlLike = () => {
     likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
 
+// REstore liked recipes on page load
+
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+
+    //restore likes
+    state.likes.readStorage();
+
+    // toggle like menu button
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+    // render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLike(like));
+
+});
+
 // handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
     if (e.target.matches('.btn-decrease, .btn-decrease *')) {
@@ -185,5 +196,4 @@ elements.recipe.addEventListener('click', e => {
         // Likes controller
         controlLike();
     }
-    console.log(state.recipe);
-})
+});
